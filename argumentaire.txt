@@ -1,0 +1,54 @@
+Documentation du TP1 : Le Zoo Forestier de Val-Jalbert
+Développé par Patricia Bravo
+
+---
+
+Design et Stratégie
+
+J'ai choisi d'utiliser la pseudo-classe `:root` pour définir des styles globaux (couleurs, espacements, typographies). Cette approche garantit une gestion centralisée, simplifiant la mise à jour des éléments visuels sur l'ensemble du site et améliorant ainsi sa cohérence et sa maintenabilité.
+
+Le design général est minimaliste, avec pour objectif de réduire la surcharge visuelle et de permettre aux visiteurs de se concentrer sur les images, qui capturent l'essence du zoo.
+
+### Structure et Hiérarchie Visuelle
+
+Pour une navigation fluide, j'ai structuré les sections du site avec des tailles modulaires (XL, large, moyenne), créant une hiérarchie claire qui facilite l'expérience utilisateur.
+
+---
+
+Contenu du Site
+
+Barre de Navigation
+La navigation est conçue pour répondre aux besoins des familles. Quatre liens essentiels sont mis en avant, accompagnés d'un bouton d'achat de billets bien visible pour un accès rapide. Cette disposition simplifie le parcours utilisateur dès l'arrivée sur le site.
+
+Section Hero
+La section « Hero » accueille les visiteurs avec une image panoramique immersive de la forêt de Val-Jalbert, offrant un attrait visuel fort qui encourage l'exploration du site.
+
+Présentation du Zoo
+Cette section met en lumière trois éléments clés :
+1. Les animaux emblématiques du zoo
+2. La localisation
+3. Les informations pratiques pour les visiteurs
+
+Ces informations sont rapidement accessibles pour faciliter la planification de la visite.
+
+Activités du Zoo
+Une bannière pleine largeur présente une image d'une famille profitant des activités du zoo, illustrant l'aspect convivial et familial de l'expérience. L'objectif est de capturer l'attention des utilisateurs en mettant en avant les moments forts d'une sortie réussie.
+
+Section Blog et Actualités
+Afin de maintenir le site dynamique et informatif, j'ai intégré une section blog dédiée aux actualités et promotions. Les visiteurs peuvent ainsi rester informés des dernières nouveautés.
+
+Initiatives de Protection de la Faune
+Un module en bannière XL met en avant les efforts de conservation du zoo. Cette section, distincte des autres, attire l'attention sur les initiatives écologiques et éducatives du zoo.
+
+Devenir Membre
+Un petit module en bas de page encourage l'adhésion, incitant les visiteurs à s'engager davantage avec le zoo.
+
+---
+
+Pied de Page
+Le pied de page regroupe des liens secondaires, les icônes de réseaux sociaux stylisées avec Font Awesome, et des informations sur la version anglaise du site et la politique de cookies. Conformément à la nouvelle loi sur la protection des données, il est essentiel de présenter clairement les informations sur les cookies.
+
+Le public cible étant principalement constitué de familles, notamment des mères utilisant les réseaux sociaux, l'intégration des icônes sociales permet de suivre les actualités du zoo et d'engager la communauté en ligne.
+
+---
+

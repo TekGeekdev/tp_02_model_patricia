@@ -1,0 +1,522 @@
+/* --- Main.css ----*/
+
+:root {
+    --gouttiere: 10px;
+    --colonne: 20ch;
+    --couleur-primaire: #323232;
+    --couleur-secondaire: #777777;
+    --couleur-tertiaire: #EFF3FD;
+    --couleur-hover: #DBDDE0;
+    --police-titre: "Nunito", sans-serif;
+    --police-paragraphe: "Inter", sans-serif;
+    --taille-h1: 1rem;
+    --taille-h2: 4.5rem;
+    --taille-h3: 2rem;
+    --taille-paragraphe: 1rem;
+    --interligne: 1.5;
+    --taille-petit: 1.5rem;
+    --module-large: 1280px;
+    --module-moyen: 1120px;
+}
+
+/* --- A utiliser uniquement en mode fil de fer --- */
+
+img {
+    min-width: 100px;
+    min-height: 100px;
+    background-color: rgba(0,0,0,0.1);
+    background-image: linear-gradient(to top left,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0) calc(50% - 1px),
+    rgba(0,0,0,.1) 50%,
+    rgba(0,0,0,0) calc(50% + 1px),
+    rgba(0,0,0,0) 100%),
+    linear-gradient(to top right,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0) calc(50% - 1px),
+    rgba(0,0,0,.1) 50%,
+    rgba(0,0,0,0) calc(50% + 1px),
+    rgba(0,0,0,0) 100%);
+    border-radius: 3px;
+}
+/*----------------------------------------------------------------------*/
+/* General.css */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--couleur-tertiaire);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body>*+* {
+    margin-top: var(--gouttiere);
+}
+
+body>div {
+    display: flex;
+    gap: var(--gouttiere);
+    flex-wrap: wrap;
+}
+
+main {
+    display: block;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+    height: auto; 
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+    font-family: var(--police-paragraphe);
+    font-size: var(--taille-paragraphe);
+}
+
+li {
+    line-height: var(--interligne);
+}
+.liens_caches {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+/*----------------------------------------------------------------------*/
+/* Entete.css */
+
+[id="entete"] {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1; 
+    position: relative; 
+}
+[id="entete"]>aside {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-lien {
+    margin-right: auto; 
+}
+
+.logo {
+    display: block;
+    overflow: hidden;
+    max-width: 116px;
+    max-height: 25px;
+}
+
+.logo img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+/*----------------------------------------------------------------------*/
+/* -- Navigation -- */
+
+[id="navigation"] {
+    display: flex;
+    gap: 10px;
+}
+[id="navigation"] a {
+    padding: 10px;
+    font-family: var(--police-paragraphe);
+    display: inline-block;
+    transition-property: background-color, color;
+    transition-duration: 2s, 1s;
+    transition-delay: 0ms, 3s;
+    transition-timing-function: ease-in-out;
+    color: var(--couleur-primaire);
+    text-decoration: none;
+}
+
+[id="navigation"] a:hover {
+    background-color: var(--couleur-hover);
+    transition-duration: 200ms, 1s;
+    border-radius: 4px;
+}
+.boutons {
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-family: var(--police-paragraphe);
+    display: inline-block;
+    background-color: var(--couleur-primaire);
+    color: var(--couleur-tertiaire);
+    text-decoration: none;
+    cursor: pointer; 
+    margin-top: 1rem;
+    transition: background-color 0.2s ease-in-out, color 0.1s ease-in-out;
+}
+
+.boutons:hover {
+    background-color: var(--couleur-secondaire);
+    transition: background-color 0.1s ease-in-out;
+}
+
+/*----------------------------------------------------------------------*/
+/* -- Menu déroulant -- */
+
+.menu-deroulant {
+    position: relative;
+    padding: 10px;
+}
+.menu-deroulant a {
+    display: block;
+    padding: 8px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--couleur-primaire);
+    font-family: var(--police-paragraphe);
+}
+.menu-deroulant a:hover {
+    color: var(--couleur-primaire);
+    background-color: var(--couleur-hover);
+    border-radius: 4px;
+}
+.menu-deroulant div {
+    background-color: var(--couleur-tertiaire);
+    position: absolute;
+    top: 100%;
+    padding: 10px;
+    min-width: max-content;
+    right: 0;
+    transition-property: opacity, top;
+    transition-duration: 200ms;
+    z-index: 1;
+    border-radius: 4px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.menu-deroulant:not(:hover) div {
+    opacity: 0;
+    pointer-events: none;
+    top: 90%;
+}
+.menu-lien {
+    color: var(--couleur-primaire);
+    border-left: 1px solid #332e2e;
+    color: var(--couleur-primaire);
+}
+
+/*----------------------------------------------------------------------*/
+/* -- Modules generales -- */
+
+.module-large {
+    max-width: var(--module-large);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+.module-moyen {
+    max-width: var(--module-moyen);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+.module-xl {
+    display: flex;
+    max-height: 320px;
+    margin: 8rem 0;
+}
+.titre-entete-modules {
+    font-size: 1.5rem; 
+    font-family: var(--police-titre); 
+    margin-top: 0.5rem; 
+    margin-bottom: 1rem; 
+    font-weight: normal; 
+}
+
+/*----------------------------------------------------------------------*/
+/* -- Contenu Hero.css -- */
+
+.module-hero {
+    position: relative; 
+    min-height: 500px;
+    max-width: 100%;
+    overflow-x: hidden;
+    padding: 4rem 0rem;
+    background: #74797E url(../images/hero-background.jpg) center center/cover no-repeat;
+}
+.hero-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding-top: 20rem;
+}
+.hero-flex h2 {
+    font-weight: normal;
+}
+
+.background-image {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    object-fit: cover; 
+    filter: brightness(0.5);
+    background-color: var(--couleur-tertiaire);
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+.module-hero :is(h1, h2) {
+    color: var(--couleur-tertiaire);
+    line-height: var(--interligne);
+    font-weight: normal;
+}
+
+/* --- Typographies --- */
+
+:is(h1, h2, h3) {
+    font-family: var(--police-titre);
+}
+
+h1 {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 4.5rem;
+}
+h3 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1rem;
+    font-family: var(--police-paragraphe);
+    line-height: 1.5;
+}
+small {
+    font-size: 1.5rem;
+    font-family: var(--police-titre);
+}
+a {
+    text-decoration: none;
+    font-family: var(--police-paragraphe);
+}
+/*----------------------------------------------------------------------*/
+/* --- Zone de présentation du Zoo --*/
+/*----------------------------------------------------------------------*/
+
+.module-entete  {
+    max-width: 700px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    color: var(--couleur-primaire);
+    margin-top: 6rem;
+}
+.grille-trois-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    
+}
+.sujet {
+    background-color: #ffffff;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+.sujet img {
+    max-height: 180px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.sujet-text {
+    padding: 1rem 2rem;
+}
+.sujet-text span {
+    font-family: var(--police-paragraphe);
+}
+
+.cta-bouton {
+    margin: 2rem auto;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*----------------------------------------------------------------------*/
+/* --- Zone des activités du Zoo --*/
+/*----------------------------------------------------------------------*/
+
+.image-gauche {
+    display: flex;
+    width: 50%;
+}
+.image-gauche img {
+    border-radius: 5px;
+    max-height: 320px;
+}
+.contenu-droite {
+    background-color: white;
+    color: var(--couleur-primaire);
+    flex: 1;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2rem;
+}
+.contenu-droite small {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.contenu-droite p {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+    vertical-align: baseline;
+}
+
+
+/*----------------------------------------------------------------------*/
+/* --- Zone des infos --*/
+/*----------------------------------------------------------------------*/
+
+.nouvelles {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.nouvelle-large {
+    display: flex;
+    margin-bottom: 2rem;
+}
+.nouvelle-large img {
+    width: 50%;
+    max-height: 280px;
+}
+.contenu-text {
+    background-color: white;
+    flex: 1;
+    padding: 2rem;
+    font-family: var(--police-paragraphe);
+}
+.date-author {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 2rem;
+}
+/*----------------------------------------------------------------------*/
+/* --- Section Devenir-memebre.css --*/
+/*----------------------------------------------------------------------*/
+
+.devenir-membre {
+    display: flex;
+    background-color: white;
+    max-height: 190px;
+    
+}
+.devenir-membre img {
+    flex-basis: 50%;
+}
+.devenir-membre-text {
+    flex: 1;
+    padding: 1rem 2rem;
+}
+.devenir-membre-text p {
+    padding-bottom: 1rem;
+}
+
+/*----------------------------------------------------------------------*/
+/* -- Zone de pied de page */
+/*----------------------------------------------------------------------*/
+
+[id="pied-page"] {
+    display: flex;
+    flex-direction: column;
+    color: #9f9caf;
+    background-color: var(--couleur-primaire);
+    gap: 20px;
+    margin-top: 100px;
+    padding: 20px;
+}
+
+.nav-pied-page {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding: 0 40px;
+}
+
+.colonne {
+    flex-basis: 30ch;
+    margin: 10px;
+}
+
+.colonne h5 {
+    margin-top: 0;
+}
+
+.colonne a {
+    display: block;
+    margin: 10px 0;
+    color: #9f9caf;
+    text-decoration: none;
+}
+.colonne a:hover {
+    color: white;
+    text-decoration: none;
+}
+.contenu-liens-socials {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    gap: 5rem; 
+    border-top: 1px solid #6e6e6e; 
+    padding-top: 20px; 
+}
+
+.contenu-socials {
+    display: flex;
+    gap: 1rem; 
+}
+
+.contenu-socials p {
+    vertical-align: baseline; 
+}
+
+.contenu-socials {
+    display: flex;
+    font-size: 16px; 
+    color: #9f9caf; 
+}
+
+.social-liens.fab {
+    color: #9f9caf; 
+}
+.social-liens.fab a:hover {
+    color: white;
+}
+.contenu-liens-socials a {
+    color: #9f9caf;
+}
+.contenu-liens-socials a:hover {
+    color: white;
+}
+
