@@ -66,12 +66,14 @@ body>div {
 main {
     display: block;
     width: 100%;
+    object-fit: contain;
 }
 
 img {
     width: 100%;
     height: auto; 
     margin: 0 auto;
+    object-fit: cover;
 }
 
 ul {
@@ -248,7 +250,7 @@ li {
     max-width: 100%;
     overflow-x: hidden;
     padding: 4rem 0rem;
-    background: #74797E url(../images/hero-background.jpg) center center/cover no-repeat;
+    background: #74797E url(/assets/images/img_panorama_acceuil.webp) center center/cover no-repeat;
 }
 .hero-flex {
     display: flex;
@@ -519,4 +521,5 @@ a {
 .contenu-liens-socials a:hover {
     color: white;
 }
+
 
